@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
+import { nanoid } from 'nanoid'
+import { Observable, of } from 'rxjs';
 import { Todo } from './model/todo'
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
-  list: Todo[] = [
-    new Todo('1st task'),
-    new Todo('2nd todo')
+  list:Todo[]= [
+    { id: nanoid(), task: '1st task' }
   ]
 
   constructor() { }
@@ -17,7 +19,7 @@ export class TodoService {
   }
 
   addTodo(task: string) {
-    const todo = new Todo(task)
+    const todo = {id: nanoid(), task}
     this.list.push(todo)
   }
   removeTodo(id: string) {

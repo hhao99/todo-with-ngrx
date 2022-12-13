@@ -1,9 +1,6 @@
-import { nanoid } from 'nanoid'
-export class Todo {
-    id: string = nanoid()
-    task: string = '';
-    done: boolean = false;
-    constructor(task: string) {
-        this.task = task
-    }
+
+export interface Todo {
+    id: string 
+    task: string
+    done?: boolean 
 }
