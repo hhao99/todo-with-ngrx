@@ -1,0 +1,10 @@
+<div>
+
+    <input type="text"
+            #taskref name="task" id="task"
+            value="task"
+            (keyup.enter)="onSubmit(taskref.value)"
+            />
+    <button (click)="onSubmit(taskref.value)">add new task</button>
+
+</div>
